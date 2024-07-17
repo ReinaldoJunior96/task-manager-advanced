@@ -21,4 +21,15 @@ const router = createRouter({
   ]
 })
 
+// router.beforeEach((to, from, next) => {
+//   const token = localStorage.getItem('token')
+//   const tokenExpiry = localStorage.getItem('tokenExpiry')
+
+//   if (to.name !== 'login' && (!token || Date.now() > tokenExpiry)) {
+//     next({ name: 'login' })
+//   } else {
+//     next()
+//   }
+// })
+
 export default router

@@ -15,14 +15,11 @@
 </template>
 
 <script setup>
-defineOptions({
-  name: 'LoginPage'
-})
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-const email = ref('pp@gmail.com')
-const password = ref('321')
+const email = ref('')
+const password = ref('')
 const router = useRouter()
 
 function generateToken() {
@@ -30,12 +27,17 @@ function generateToken() {
 }
 
 function login() {
-  let storedUsers = JSON.parse(localStorage.getItem('user')) || []
+  const storedUsers = JSON.parse(localStorage.getItem('users')) || []
 
-  if (storedUsers.email === email.value && storedUsers.password === password.value) {
+  const user = storedUsers.find(
+    (user) => user.email === email.value && user.password === password.value
+  )
+
+  if (user) {
     const token = generateToken()
     localStorage.setItem('token', token)
     localStorage.setItem('tokenExpiry', Date.now() + 15 * 60 * 1000) // 15 minutos
+    localStorage.setItem('loggedInUser', email.value)
 
     window.location.href = '/home'
   } else {

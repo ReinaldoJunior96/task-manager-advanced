@@ -2,18 +2,20 @@
   <div class="home-container">
     <h1>Welcome, {{ username }}</h1>
     <button @click="logout">Logout</button>
+    <section>
+      <TaskComponentVue />
+    </section>
   </div>
 </template>
 
 <script setup>
+import TaskComponentVue from '@/components/TaskComponent.vue'
 import { ref, onMounted, onUnmounted } from 'vue'
-import { useRouter } from 'vue-router'
 
 defineOptions({
   name: 'HomePage'
 })
 
-const router = useRouter()
 const username = ref('')
 const token = ref(null)
 let tokenRenewalInterval = null
@@ -42,10 +44,12 @@ function checkToken() {
     logout()
   } else {
     tokenRenewalInterval = setInterval(renewToken, 15 * 60 * 1000)
-    const storedUsers = JSON.parse(localStorage.getItem('user')) || []
+    const storedUsers = JSON.parse(localStorage.getItem('users')) || []
+    const loggedUser = localStorage.getItem('loggedInUser')
+    const user = storedUsers.find((user) => user.email === loggedUser)
     token.value = localStorage.getItem('token')
     if (storedUsers) {
-      username.value = storedUsers.username
+      username.value = user.username
     } else {
       logout()
     }
