@@ -10,6 +10,7 @@
         <input type="password" v-model="password" id="password" required />
       </div>
       <button type="submit">Login</button>
+      <router-link :to="{ name: 'register' }">Register</router-link>
     </form>
   </div>
 </template>

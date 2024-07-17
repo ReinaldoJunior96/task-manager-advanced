@@ -1,57 +1,64 @@
-# task-manager-adv
+# Task Manager PWA
 
-This template should help get you started developing with Vue 3 in Vite.
+## Visão Geral
 
-## Recommended IDE Setup
+Esta aplicação é um gerenciador de tarefas (Task Manager) desenvolvido como uma Progressive Web App (PWA) utilizando Vue 3. A aplicação permite que os usuários registrem e autentiquem, gerenciem suas tarefas, recebam notificações e desfrutem de uma experiência rápida e responsiva.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Funcionalidades
 
-## Customize configuration
+### Autenticação de Usuários
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- **Registro de Novos Usuários:** Permitir que novos usuários se registrem na aplicação.
+- **Login e Logout:** Usuários podem fazer login e logout.
+- **Proteção de Rotas:** Rotas que exigem autenticação estão protegidas.
 
-## Project Setup
+### Gerenciamento de Tarefas (CRUD)
 
-```sh
-npm install
-```
+- **Criar Tarefa:** Permitir a criação de novas tarefas.
+- **Visualizar Tarefas:** Exibir todas as tarefas do usuário logado.
+- **Editar Tarefa:** Permitir a edição de uma tarefa existente.
+- **Excluir Tarefa:** Permitir a exclusão de uma tarefa.
 
-### Compile and Hot-Reload for Development
+### Filtros e Ordenação
 
-```sh
-npm run dev
-```
+- **Filtrar por Status:** Filtrar tarefas por status (completa, incompleta).
+- **Filtrar por Data de Criação:** Filtrar tarefas por data de criação.
+- **Pesquisar Tarefas:** Pesquisar tarefas por palavras-chave.
 
-### Compile and Minify for Production
+### Notificações
 
-```sh
-npm run build
-```
+- **Notificações de Prazo:** Notificar o usuário sobre tarefas próximas do prazo de conclusão.
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Performance
 
-```sh
-npm run test:unit
-```
+- **Carregamento Rápido:** A aplicação deve carregar rapidamente e ser responsiva.
+- **Lazy Loading:** Utilização de técnicas de lazy loading para otimizar o carregamento de componentes e dados.
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+## Tecnologias e Ferramentas
 
-```sh
-npm run test:e2e:dev
-```
+### Frontend
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+- **Vue 3:** Framework JavaScript progressivo para construir interfaces de usuário.
+- **Vue Router:** Gerenciamento de rotas para Vue.js.
+- **Pinia:** Gerenciamento de estado para Vue 3.
+- **Tailwind CSS:** Framework CSS para estilização.
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+### Armazenamento de Dados
 
-```sh
-npm run build
-npm run test:e2e
-```
+- **LocalStorage:** Utilizado para salvar os dados da aplicação no navegador do usuário.
 
-### Lint with [ESLint](https://eslint.org/)
+## Configuração e Instalação
 
-```sh
-npm run lint
-```
+### Pré-requisitos
+
+- Node.js v16 ou superior
+- npm ou yarn
+
+### Passos para Configuração
+
+1. **Clone o Repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
+   ```

@@ -5,6 +5,7 @@
       <input type="email" v-model="email" placeholder="Email" />
       <input type="password" v-model="password" placeholder="Password" />
       <button @click="register" class="p-4 bg-red-300">Sign Up</button>
+      <router-link class="bg-white" :to="{ name: 'login' }">Login</router-link>
     </div>
   </section>
 </template>
