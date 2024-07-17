@@ -53,12 +53,3 @@ Esta aplicação é um gerenciador de tarefas (Task Manager) desenvolvido como u
 
 - Node.js v16 ou superior
 - npm ou yarn
-
-### Passos para Configuração
-
-1. **Clone o Repositório:**
-
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
-   ```
